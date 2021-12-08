@@ -14,16 +14,21 @@ exports.deliveryFee = async (req, res) => {
       dropOffAddress,
       deliveryType,
     } = req.body;
+
+    // validator
     await requiredFieldValidator(
       ['pickupAddress', 'dropOffAddress', 'deliveryType'],
       Object.keys(req.body),
     );
+
+    //requestBody Object
     const deliveryObj = {};
 
     deliveryObj.pickupAddress = pickupAddress;
     deliveryObj.dropOffAddress = dropOffAddress;
     deliveryObj.deliveryType = deliveryType;
   
+    //passing the request body to the service
     const responseData = await deliveryFeeService.deliveryFee(
       deliveryObj);
     return res.json(response.success(responseData.data, responseData.message));

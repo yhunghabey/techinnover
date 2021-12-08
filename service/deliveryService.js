@@ -3,6 +3,7 @@ const { ROUTE0, ROUTE1, ROUTE2, ROUTE3,
      ROUTE4, ROUTE5, ROUTE6, ROUTE7, 
      ROUTE8, ROUTE9, ROUTEXTREME, ROUTEPRICE } = require('../config');
 
+ //getting the ROUTE index    
 const getIndex = function (location){
     let response = 0;
     if (ROUTE0.includes(location)){
